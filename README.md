@@ -32,41 +32,9 @@ graph TD;
     Local MQTT Broker - Object Containing database of MQTT broker, Broker IP address, Username, Password, Port no. of the broker.
     
 # [Source Code File](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code) - Directory containing sub-modules.
-### [insert_conf.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/Insert_Confuguration_File) - A module containing functions to convert (JSON files to Python) and (Python to JSON).
-	Class SectonConfig:
-	
-	def read_cfg(self, file_name): function to convert JSON file to Python file.
-	
-	def print_cfg(self): function to convert Python file to JSON file.
-
-### [insert_yard_conf.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/Insert_yard_configuration) - A module containing functions to convert (JSON file to Python) and (python to JSON).
-	Class SectonConfig:
-	
-	def read_cfg(self, file_name): function to convert JSON file to Python file.
-	
-	def print_cfg(self): function to convert Python file to JSON file.
 
 ### [sms_dlm_model.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_DLM_MODEL) - Module to create tables in the database. 
 	We have created tables for pms_config and signal_playback.
-
-### [scc_layout_model.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_LAYOUT_MODEL) - Module to create tables in the database.
-	We have created tables for LayoutSectionInfo, and LayoutSectionConnectionsInfo.
-
-### [scc_trail_through.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_TRAIL_THROUGH) - module to detect trail through and torpedo status.
-	***Class Sec:*** - Initialised Section Variables.
-	
-	***Class Trailthrough:***
-	**def get_point_config(self):** - function to return section_id and
-	point_id from PointConfig table.
-	
-	**def init_trail_through_info(self):** - add records on tt_sec_obj_list ['section_id and point_id by calling get_point_config' & 'section config objects by calling scc_api.read_section_connections_info() function.
-	
-	**def detect_trail_through(self, section_json_data, point_obj_list):** - function to detect trail through using passed section_json_data and point_obj_list.
-	
-	**def find_torpedo_status(self, section_json_data):** - finding torpedo status by using objects of tt_sec_obj_list.
-	
-	**def construct_section_json_msg(self):** - return json_msg with key1 as "timestamp" & key2 as (object of tt_section_msg_list).
-
 
 ### [sms_dlm_conf.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_DLM_CONF) - module to load data (comment, version, lmb(local mqtt broker), scc_id) from configuration files.
 
@@ -91,6 +59,7 @@ graph TD;
 ### [sms_dlm_api.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_DLM_API) - Module dealing with all Database operations such as Select, Insert, Delete records.
 
 	class SccAPI:
+ 
 	def __init__(self): Initialising train_trace_obj_list.
 	
 	def connect_database(self, config): Connect passed argument file to postgresql database.
@@ -121,6 +90,6 @@ graph TD;
 	def process_cwsm_msg(self, cwsm_signal_control_msg):
  		”if signal_status in passed message is set, then add cwsm_signal_control_msg to 'insert signal playback info' and validate pms_lock_message and pms_point_change_message”
  
-		“if signal_status in passed message is cancel signal, then publish 'cancelsignalPublishMsg' and remove this signal from signal_info list”]
+		“if signal_status in the passed message is canceled signal, then publish 'cancelsignalPublishMsg' and remove this signal from signal_info list”]
 	
 	def publish_signal_info(self): function to publish singal_info list as a message to topic sms/signal_info every 1 sec.
