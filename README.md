@@ -13,7 +13,7 @@ graph TD;
 ```
 # [Configuration File](https://github.com/paragnema1/Signal_Managing_System_Module/tree/main/Configuration_File) - Files/settings that a program reads before startup.
 
-### [signal.conf](https://github.com/paragnema1/Siding_Control_Centre_Module/blob/main/Configuration_Files/scc.conf) 
+### [signal.conf](https://github.com/paragnema1/Signal_Managing_System_Module/blob/main/Configuration_File/signal.conf) 
     "signal_id" : A unique identifier for each signal in the network,
     "section_marks": An array of objects containing section marks
                     ["section_mark_id":A unique identifier for the section mark.,
@@ -23,7 +23,7 @@ graph TD;
                     "signal_controlled":Array of signal controlled,
                     "next_signal_id":signal_id of next signal.]
                     
-### [sms.conf](https://github.com/paragnema1/Siding_Control_Centre_Module/blob/main/Configuration_Files/section.conf) - sms configuration file contains:-
+### [sms.conf](https://github.com/paragnema1/Signal_Managing_System_Module/blob/main/Configuration_File/sms.conf) - sms configuration file contains:-
 
     Comment- Description of file.
     Version - version of module.
