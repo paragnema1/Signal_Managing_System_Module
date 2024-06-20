@@ -11,7 +11,7 @@ graph TD;
 ```
 # [Signal_Managing_System_Module](https://github.com/paragnema1/Signal_Managing_System_Module) - A Module of Cyber Signalling Software Architecture.
 
-# [Configuration File](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Configuration_Files) - Files/settings that a program reads before startup.
+# [Configuration File](https://github.com/paragnema1/Signal_Managing_System_Module/tree/main/Configuration_File) - Files/settings that a program reads before startup.
 
 ### [signal.conf](https://github.com/paragnema1/Siding_Control_Centre_Module/blob/main/Configuration_Files/scc.conf) 
     "signal_id" : A unique identifier for each signal in the network,
@@ -31,7 +31,7 @@ graph TD;
     Database - Object Containing database of provider, User, Password, HOST Protocol, HOST IP address, Database name
     Local MQTT Broker - Object Containing database of MQTT broker, Broker IP address, Username, Password, Port no. of the broker.
     
-# [Source Code File](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code) - Directory containing sub-modules.
+# [Source Code File](https://github.com/paragnema1/Signal_Managing_System_Module/tree/main/Source_Code) - Directory containing sub-modules.
 
 ### [sms_dlm_model.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_DLM_MODEL) - Module to create tables in the database. 
 	We have created tables for pms_config and signal_playback.
