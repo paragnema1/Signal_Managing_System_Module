@@ -46,7 +46,7 @@ graph TD;
 	
 	def print_cfg(self): function to convert Python file to JSON file.
 
-### [scc_dlm_model.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_DLM_MODEL) - Module to create tables in the database. 
+### [sms_dlm_model.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_DLM_MODEL) - Module to create tables in the database. 
 	We have created tables for pms_config and signal_playback.
 
 ### [scc_layout_model.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_LAYOUT_MODEL) - Module to create tables in the database.
@@ -68,7 +68,7 @@ graph TD;
 	**def construct_section_json_msg(self):** - return json_msg with key1 as "timestamp" & key2 as (object of tt_section_msg_list).
 
 
-### [scc_dlm_conf.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_DLM_CONF) - module to load data (comment, version, lmb(local mqtt broker), scc_id) from configuration files.
+### [sms_dlm_conf.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_DLM_CONF) - module to load data (comment, version, lmb(local mqtt broker), scc_id) from configuration files.
 
 	Class SccDlmConfRead:
  
