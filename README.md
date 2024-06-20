@@ -23,7 +23,7 @@ graph TD;
                     "signal_controlled":Array of signal controlled,
                     "next_signal_id":signal_id of next signal.]
                     
-### [sms.conf](https://github.com/paragnema1/Siding_Control_Centre_Module/blob/main/Configuration_Files/section.conf) - - sms configuration file contains:-
+### [sms.conf](https://github.com/paragnema1/Siding_Control_Centre_Module/blob/main/Configuration_Files/section.conf) - sms configuration file contains:-
 
     Comment- Description of file.
     Version - version of module.
@@ -164,54 +164,29 @@ graph TD;
 	**def clear_trail_through(self, tt_msg):** - Making last_tt_record_inserted[tt_msg['section_id']] = False and add time stamp and passed tt_msg to section_id in trail through playback table.
 
 	
-### [main.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/Main_File) - main module for yard configuration and section information.
-	***Class Point:*** - Initialization of point variables.
-
+### [main.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/Main_File) - main module for Signal Managing System.
+	Class SoftsgnalServer:
+	
+	def init_section_info(self): - Initialising SoftSgnalServer Class list and dictionary.
+	
+	def read_cfg(self, file_name): Convert file into python whose path is passed and return it.
+	
+	def sem_section_info_sub_fn(self, in_client, user_data, message): function remove those section_id from passed data whose section_status is occupied.
+	
+	def signal_msg_sub_fn(self,in_client, user_data, message): function calling "process_cwsm_msg function" and pass this passed message as an attribute to this function.
+	
+	def point_info_sub_fn(self, in_client, user_data, message): function updating signal_status of signal_info list after checking some conditions from signal_json_data.
+	
+	def check_section_status(self, point_id): function returns section_status of section whose point_id is passed.
+	
+	def validate_point_info(self, message): publish passed message to mqtt topic "cwsm/point_control" only iff section_status of section whose point_id is passed is cleared.
+	
+	def publish_To_PMS(self): publish “cwsm_pub_point_request” dicitionary to mqtt topic "cwsm/point_control".
+	
+	def process_cwsm_msg(self, cwsm_signal_control_msg):
  
-	***Class SectonConfig:***
+ ”if signal_status in passed message is set, then add cwsm_signal_control_msg to 'insert signal playback info' and validate pms_lock_message and pms_point_change_message”
+ 
+“if signal_status in passed message is cancel signal, then publish 'cancelsignalPublishMsg' and remove this signal from signal_info list”]
 	
-	**def read_cfg(self, file_name):** function to convert JSON file to Python file.
-	
-	**def print_cfg(self):** function to convert Python file to JSON file.
-	
-	***Class Yard:*** - Initialization of yard variables.	
-	***Class Section:*** - Initialization of section variables.	
-	***Class Sccserver:***
-	
-	**def init_section_info(self):** - Append section class object in section_obj_list & assign section id to each section.
-	
-	**def cwsm_section_reset_sub_fn(self, in_client, user_data, message):** - publish section reset message and update event in event info table.
-	
-	**def cwsm_dp_reset_sub_fn(self, in_client, user_data, message):** - Publish dp reset message and update the event in the event info table.
-	
-	**def check_user_roles(self, username):** - Method to get user permission by passing user name.
-	
-	**def section_reset_pub_fn(self, json_section_reset_msg_param):** - Publish section reset message.
-	
-	**def get_dp_list_of_section(self, section_id):** - Returns dp list of section by taking section id as argument.
-	
-	**def dp_reset_pub_fn(self, json_dp_reset_msg_param):** - Publish dp_reset message.
-	
-	**def fill_yard_config_info_from_db(self):** - fill yard config info in section_obj_list from from yard_config table.
-	
-	**def fill_section_connections_info_from_db(self):** - fill layout section connections info in section_obj_list from LayoutSectionConnectionsInfo table.
-	
-	**def get_section_status(self,section_id):** - get section status ( from section_obj_list) by passing section_id of that section.
-	
-	**def print_section_info(self):** - log section info from section_obj_list.
-	
-	**def construct_section_json_msg(self):** - return section_obj_list converted into json format.
-	
-	**def publish_section_info(self, mqtt_client, scc_api):** - Publish section_obj_list converted into json format through mqtt.
-	
-	**def evaluator_section_info_sub_fn(self, in_client, user_data, message):** - insert passed json message as attribute to (section info table, section playback info table and train trace info table) & publish trail through message ‘if any’.
-	
-	**def load_point_config(self):** - logging point configuration (point id and section id) from pointconfig table.
-	
-	**def point_info_sub_fn(self, in_client, user_data, message):** - loading row of passed attribute message for which its point id is equal to point id in point_obj_list.
-	
-	**def print_point_info(self):** - Print point info from point_obj_list.
-	
-	**def tt_info_sub_fn(self, in_client, user_data, message):** - insert passed attribute message in “trail_through_info table” & “trail through playback table”.
-	
-	**def tt_clear_sub_fn(self, in_client, user_data, message):** - Clear trail through of section_id in passed attribute message and add info in trail_through_info table of scc_dlm_api.py
+	def publish_signal_info(self): function to publish singal_info list as a message to topic sms/signal_info every 1 sec.
