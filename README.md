@@ -32,10 +32,10 @@ graph TD;
     
 # [Source Code File](https://github.com/paragnema1/Signal_Managing_System_Module/tree/main/Source_Code) - Directory containing sub-modules.
 
-### [sms_dlm_model.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_DLM_MODEL) - Module to create tables in the database. 
+### [sms_dlm_model.py](https://github.com/paragnema1/Signal_Managing_System_Module/tree/main/Source_Code/sms_dlm_model) - Module to create tables in the database. 
 	We have created tables for pms_config and signal_playback.
 
-### [sms_dlm_conf.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_DLM_CONF) - module to load data (comment, version, lmb(local mqtt broker), scc_id) from configuration files.
+### [sms_dlm_conf.py](https://github.com/paragnema1/Signal_Managing_System_Module/tree/main/Source_Code/sms_dlm_conf) - module to load data (comment, version, lmb(local mqtt broker), scc_id) from configuration files.
 
 	Class SccDlmConfRead:
  
@@ -67,7 +67,7 @@ graph TD;
 	
 	def get_section_id(self, point_id): return records from pms_config table where point_id is matched with passed point_id.
  
-### [main.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/Main_File) - main module for Signal Managing System.
+### [main.py]([https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/Main_File](https://github.com/paragnema1/Signal_Managing_System_Module/tree/main/Source_Code/Main)) - main module for Signal Managing System.
 	Class SoftsgnalServer:
 	
 	def init_section_info(self): - Initialising SoftSgnalServer Class list and dictionary.
