@@ -47,7 +47,7 @@ graph TD;
 	def print_cfg(self): function to convert Python file to JSON file.
 
 ### [scc_dlm_model.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_DLM_MODEL) - Module to create tables in the database. 
-	We have created tables for SectionConfigInfo, DPInfo, SectionInfo, SecionPlaybackInfo, TrainTraceInfo, YardPerformanceInfo, TorpedoPerformanceInfo, YardConfigInfo, OccUserInfo, EventInfo, PointConfig, TrailThroughInfo, TrailThroughPlayback.
+	We have created tables for pms_config and signal_playback.
 
 ### [scc_layout_model.py](https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/SCC_LAYOUT_MODEL) - Module to create tables in the database.
 	We have created tables for LayoutSectionInfo, and LayoutSectionConnectionsInfo.
