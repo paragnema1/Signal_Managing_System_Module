@@ -184,9 +184,8 @@ graph TD;
 	def publish_To_PMS(self): publish “cwsm_pub_point_request” dicitionary to mqtt topic "cwsm/point_control".
 	
 	def process_cwsm_msg(self, cwsm_signal_control_msg):
+ 		”if signal_status in passed message is set, then add cwsm_signal_control_msg to 'insert signal playback info' and validate pms_lock_message and pms_point_change_message”
  
- ”if signal_status in passed message is set, then add cwsm_signal_control_msg to 'insert signal playback info' and validate pms_lock_message and pms_point_change_message”
- 
-“if signal_status in passed message is cancel signal, then publish 'cancelsignalPublishMsg' and remove this signal from signal_info list”]
+		“if signal_status in passed message is cancel signal, then publish 'cancelsignalPublishMsg' and remove this signal from signal_info list”]
 	
 	def publish_signal_info(self): function to publish singal_info list as a message to topic sms/signal_info every 1 sec.
