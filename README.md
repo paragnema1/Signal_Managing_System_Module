@@ -67,7 +67,7 @@ graph TD;
 	
 	def get_section_id(self, point_id): return records from pms_config table where point_id is matched with passed point_id.
  
-### [main.py]([https://github.com/paragnema1/Siding_Control_Centre_Module/tree/main/Source_Code/Main_File](https://github.com/paragnema1/Signal_Managing_System_Module/tree/main/Source_Code/Main)) - main module for Signal Managing System.
+### [main.py](https://github.com/paragnema1/Signal_Managing_System_Module/tree/main/Source_Code/Main) - main module for Signal Managing System.
 	Class SoftsgnalServer:
 	
 	def init_section_info(self): - Initialising SoftSgnalServer Class list and dictionary.
