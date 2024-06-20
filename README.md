@@ -23,8 +23,7 @@ graph TD;
                     "signal_controlled":Array of signal controlled,
                     "next_signal_id":signal_id of next signal.]
                     
-### [sms.conf](https://github.com/paragnema1/Signal_Managing_System_Module/blob/main/Configuration_File/sms.conf) - sms configuration file contains:-
-
+### [sms.conf](https://github.com/paragnema1/Signal_Managing_System_Module/blob/main/Configuration_File/sms.conf)
     Comment- Description of file.
     Version - version of module.
     SSC_ID - SSC Identifier.
