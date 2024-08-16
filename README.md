@@ -2,8 +2,8 @@
 
 ```mermaid
 graph TD;
-    SCC-->Configuration_file;
-    SCC-->Source_code;
+    SMS-->Configuration_file;
+    SMS-->Source_code;
     Configuration_file-->signal.conf;
     Configuration_file-->sms.conf;
     Source_code-->main.py;
